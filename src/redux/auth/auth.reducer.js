@@ -52,9 +52,10 @@ const authSlice = createSlice({
                 state.error = null;
         })
         
-       
         .addMatcher(
             isAnyOf(
+                registerThunk.rejected,
+                loginThunk.rejected,
                 refreshThunk.rejected,
                 logoutThunk.rejected
             ),
