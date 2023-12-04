@@ -1,6 +1,6 @@
 import { createSlice, isAnyOf } from "@reduxjs/toolkit";
 import { loginThunk, registerThunk, refreshThunk, logoutThunk } from '../services';
-//import Notiflix from "notiflix";
+import Notiflix from "notiflix";
 
 const initialState = {
     isLoading: false,
@@ -42,8 +42,31 @@ const authSlice = createSlice({
                   
         .addMatcher(
             isAnyOf(
-                loginThunk.pending,
-                registerThunk.pending,
+                registerThunk.rejected,
+            ),
+            (state, { payload }) => {
+            state.isLoading = false;
+            state.error = payload;
+            Notiflix.Notify.failure("User with this data already exists! Please enter other data!", {
+                position: 'center-top',
+               timeout: 3000,
+            });   
+        })
+        .addMatcher(
+            isAnyOf(
+                loginThunk.rejected,
+            ),
+            (state, { payload }) => {
+            state.isLoading = false;
+            state.error = payload;
+            Notiflix.Notify.failure("User with this data not found! Please enter correct information!", {
+                position: 'center-top',
+               timeout: 3000,
+            });   
+        })
+
+        .addMatcher(
+            isAnyOf(
                 refreshThunk.pending,
                 logoutThunk.pending
                 ),
