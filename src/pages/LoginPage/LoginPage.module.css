@@ -1,0 +1,42 @@
+.login_form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 100px;
+    align-items: center;
+}
+
+.login_form_btn {
+    display: block;
+    width: 120px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 5px;
+    margin-top: 40px;
+    background-color: rgb(10, 143, 204);
+    color: white;
+    border: none;
+}
+
+.login_form_btn:hover,
+.login_form_btn:focus {
+    background-color: blue;
+    cursor: pointer;
+}
+
+
+.login_form_inp {
+    width: 200px;
+    height: 25px;
+    border: 1px solid rgb(1, 1, 15);
+    border-radius: 5px;
+    padding-left: 10px;
+ }
+
+ .login_form_text {
+    padding-left: 20px;
+    font-size: 18px;
+    font-family: 'Times New Roman', Times, serif;
+ }

@@ -1,0 +1,21 @@
+.cont_page{
+  display: flex;
+  flex-direction: column;
+}
+
+.cont_page_cont {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 3px 3px gray;
+}
+
+.cont_page_title {
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.cont_page_subtitle {
+   font-family: 'Times New Roman', Times, serif;
+}
