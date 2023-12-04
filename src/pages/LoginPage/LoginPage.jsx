@@ -26,7 +26,7 @@ const LoginPage = () => {
           type="email"
           name="userEmail"
           required
-          placeholder="hotmail@hotmail.com"
+          placeholder="usermail@mail.com"
         />
       </label>
       <label>
