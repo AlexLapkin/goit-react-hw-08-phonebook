@@ -16,7 +16,11 @@ const Contacts = lazy(() => import('pages/ContactsPage/ContactsPage'));
 const appRoutes = [
   {
     path: ROUTES.HOME_ROUTE,
-    element: <Home />,
+    element: (
+      <RestrictedRoute>
+        <Home />
+      </RestrictedRoute>
+    ),
   },
   {
     path: ROUTES.LOGIN_ROUTE,
