@@ -13,7 +13,6 @@ const ContactForm = () => {
   const [clickBtn, setClickBtn] = useState(false);
   const dispatch = useDispatch();
   const contacts = useSelector(selectContacts);
-  //console.log(contacts);
 
   // Функція додавання контакту
   const handleAddContact = contact => {

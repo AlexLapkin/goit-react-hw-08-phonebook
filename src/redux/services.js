@@ -16,11 +16,9 @@ export const loginThunk = createAsyncThunk('auth/login', async (formData,
     try {
         const { data } = await instance.post("/users/login", formData);
         // Це буде записано в action.payload ({ payload }) редюсера
-        console.log(data);
         setToken(data.token);
         return data;
-        
-    } catch (err) {
+     } catch (err) {
        return thunkAPI.rejectWithValue(err.response.data);
     }
 }
@@ -32,7 +30,6 @@ export const registerThunk = createAsyncThunk('auth/register', async (formData,
     try {
         const { data } = await instance.post("/users/signup", formData);
         // Це буде записано в action.payload ({ payload }) редюсера
-        console.log(data);
         setToken(data.token);
         return data;
         
@@ -51,8 +48,6 @@ export const refreshThunk = createAsyncThunk('auth/refresh', async (_,
         setToken(token);
         const { data } = await instance.get("/users/current");
         // Це буде записано в action.payload ({ payload }) редюсера
-        console.log(data);
-        
         return data;
         
     } catch (err) {
@@ -75,10 +70,7 @@ export const logoutThunk = createAsyncThunk('auth/logOut', async (_,
     try {
         const { data } = await instance.post("/users/logout");
         // Це буде записано в action.payload ({ payload }) редюсера
-        console.log(data);
-        //setToken(data.token);
         return data;
-        
     } catch (err) {
        return thunkAPI.rejectWithValue(err.response.data);
     }
@@ -90,8 +82,7 @@ export const fetchContactsThunk = createAsyncThunk('contacts/fetchAll', async (_
     thunkAPI) => {
    try {
        const { data } = await instance.get("/contacts");
-       console.log(data)
-        // Це буде записано в action.payload ({ payload }) редюсера
+       // Це буде записано в action.payload ({ payload }) редюсера
         return data;
     } catch (err) {
        return thunkAPI.rejectWithValue(err.response.data);
@@ -104,8 +95,7 @@ export const addContactThunk = createAsyncThunk('contacts/addContacts', async (f
    thunkAPI) => {
     try {
         const { data } = await instance.post("/contacts", finalContacts);
-        console.log(data)
-        // Це буде записано в action.payload ({ payload }) редюсера
+       // Це буде записано в action.payload ({ payload }) редюсера
         return data;
     } catch (err) {
        return thunkAPI.rejectWithValue(err.response.data);
