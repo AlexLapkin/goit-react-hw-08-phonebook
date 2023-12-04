@@ -37,7 +37,7 @@ const RegisterPage = () => {
           type="email"
           name="userEmail"
           required
-          placeholder="usermail@mail.com"
+          placeholder="hotmail@hotmail.com"
         />
       </label>
       <label>
